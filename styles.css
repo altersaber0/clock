@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3d3d3d;
+    height: 100vh;
+}
+
+.clock {
+    width: 400px;
+    height: 400px;
+    background: url(clock.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid white;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Make dot in the middle bigger */
+.clock::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+}
+
+/* Make containers twice as big as the arrows, and let arrows fit in the upper half */
+.hour-container,
+.minute-container,
+.second-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+.hour-container {
+    width: 160px;
+    height: 160px;
+    z-index: 3;
+    transition: 250ms ease;
+}
+.minute-container {
+    width: 220px;
+    height: 220px;
+    z-index: 2;
+    transition: 250ms ease;
+}
+.second-container {
+    width: 280px;
+    height: 280px;
+    z-index: 1;
+    transition: 250ms ease;
+}
+
+
+.hour-arrow {
+    width: 8px;
+    height: 80px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.minute-arrow {
+    width: 6px;
+    height: 110px;
+    background-color: #747474;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.second-arrow {
+    width: 4px;
+    height: 140px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+}
